@@ -1,0 +1,33 @@
+ul {
+  display: inline-block;
+}
+li {
+  float: left;
+  background-color: rgb(28, 175, 154);
+  color: #FFF;
+  text-align: center;
+  font-size: 14px;
+  line-height: 20px;
+  padding: 6px 12px;
+  border: 1px solid rgb(40, 175, 154);
+  margin-left: 10px;
+  cursor: pointer;
+  //transition: .2s;
+  &.active {
+    border-color: rgb(40, 175, 154);
+    color: rgb(40, 175, 154);
+    background: #FFF;
+     cursor: default;
+  }
+  &.disabled {
+    border-color: rgb(40, 175, 154);
+    color: rgb(40, 175, 154);
+    background: #FFF;
+     cursor: default;
+  }
+}
+.selector {
+  display: inline-block;
+  vertical-align: top;
+}
+

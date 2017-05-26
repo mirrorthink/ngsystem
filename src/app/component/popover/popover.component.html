@@ -1,0 +1,8 @@
+<div class="wrapper" *ngIf="isShow">
+    <div class="inner">
+        <div class="content">
+            <div class="header"*ngIf="isShowHeader"><span class="title">{{title}}</span> <span class="close" (click)="close()">X</span></div>
+            <ng-content></ng-content>
+        </div>
+    </div>
+</div>

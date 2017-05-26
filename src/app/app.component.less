@@ -1,0 +1,132 @@
+header{
+    height: 50px;
+    border-style:solid;
+    border-width:1px;
+    border-color: rgb(238, 238, 238);
+    span{    
+        border-left-style:solid;
+        border-left-width:1px;
+        border-left-color: rgb(238, 238, 238);
+        float: right;
+        display: block;
+        height: 100%;
+        line-height: 50px;
+        padding: 0 20px;
+         &:hover{
+            background: rgb(28, 175, 154);
+            color:#fff;
+            cursor: pointer;
+        }
+    }
+    .memu{
+        float: left;
+        line-height: 50px;
+        i{
+        font-size:30px; 
+        }
+    }
+}
+nav{
+    width: 240px;
+    float: left;
+    color: rgb(99, 110, 123);
+    background:#1d2939;
+    height: 100vh;
+    display: block;
+    h3{
+        height: 50px;
+        border-style:solid;
+        border-width:1px;
+        border-color: rgb(238, 238, 238);
+        width: 100%;
+        background: #fff;
+       font-size: 25px;
+       line-height: 50px;
+       color:#000;
+       padding: 0 10px;
+       &::before {
+            content: "["; 
+            color:rgb(28, 175, 154);
+            font-weight: normal;
+            padding-right: 10px;
+       } 
+       &::after { 
+           content: "]";
+           color:rgb(28, 175, 154);
+           font-weight: normal;
+           padding-left: 10px;  
+        }
+    }
+    .link{
+        padding: 15px;
+        a{
+            width: 100%;
+            padding: 7px;
+            display: block;
+            font-size: 16px;
+            color: #8f939e;
+          
+            border-radius: 3px;
+            margin-top: 5px;
+            &:hover{
+                 background: #FFF;
+                 text-decoration: none;
+            }
+           &.active{
+                text-decoration: none;
+                background: rgb(28, 175, 154);
+                color:#fff;
+            }
+            span{
+                margin-right: 10px;
+                display: inline-block;
+                font-size: 16px;
+                
+            }     
+        }
+    }
+}
+
+
+.alert-danger{
+    background:rgba(255, 123, 232, 0.5);
+    
+    color:#a94442;
+}
+.ng-valid[required], .ng-valid.required  {
+  border-left: 5px solid #42A948; /* green */
+}
+.ng-invalid:not(form)  {
+  border-left: 5px solid #a94442; /* red */
+}
+form{
+    margin: 20px;
+    .form-group{
+        margin-bottom: 10px;
+            label{
+            width: 70px;
+        } 
+    }
+    button{ 
+        background: rgb(28, 175, 154);
+        color:#fff;
+    }
+}
+div.infomessage{
+    margin: 20px;
+
+}
+form{
+    margin: 20px;
+
+    .form-group{
+        margin-bottom: 10px;
+            label{
+            width: 70px;
+        } 
+    }
+    button{ 
+        background: rgb(28, 175, 154);
+        color:#fff;
+    }
+}
