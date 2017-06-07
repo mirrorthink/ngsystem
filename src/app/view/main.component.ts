@@ -11,6 +11,7 @@ import { server } from '../server/service';
   styleUrls: ['./main.component.less']
 })
 export class MainComponent implements OnInit {
+    @ViewChild("uploadPopoverInput") private uploadPopoverInput;
   URL = server + '/upload/';
   admin: String;
   file: any;
@@ -26,7 +27,7 @@ export class MainComponent implements OnInit {
       'changeMoney':0,
       'lastModifyTime':'',
   };
-  public uploader: FileUploader = new FileUploader({ url: this.URL });
+  public uploader: FileUploader = new FileUploader({ url: this.URL,removeAfterUpload:true });
   activeIndex;
 
   @ViewChild("modifyPopover") private modifyPopover;
@@ -107,12 +108,16 @@ export class MainComponent implements OnInit {
   search(event, value) {
     // console.log(value)
     if (((event.type == "keyup") && (event.code == "Enter")) || event.type == "click") {
+      value=value.replace(/\s/g, "")
       this.api.search(value).then(
         state => {
-          if (state) {
+          if (state.person) {
             this.personMessages = [];
-            this.personMessages.push(state)
+            this.personMessages.push(state.person)
+            console.log(state.person)
 
+          }else{
+            this.api.messageChange('无相关用户');
           }
         },
         error => { this.api.logError(error) });
@@ -161,7 +166,10 @@ export class MainComponent implements OnInit {
           that.api.messageChange('上传成功,修改了'+tempRes.count+'条数据');
           that.uploadPopover.close();
           that.showAll()
-          this.uploader.queue[0].remove()
+          console.log(that.uploadPopoverInput.value)
+         
+          that.uploadPopoverInput.value=null;
+          
           /*
           let logdata = {
             admin: this.admin,
@@ -169,8 +177,10 @@ export class MainComponent implements OnInit {
             detail: '',
           }
           that.api.addLog(JSON.stringify(logdata))*/
+          console.log(that.admin)
           
           let logdata = {
+            name:'',
             admin: that.admin,
             type: '导入excel表',
             detail: '',

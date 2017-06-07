@@ -1,7 +1,7 @@
 <div class="mainpage">
 
   <div class="srarch">
-    <input type="search" name="search" (keyup)="search($event,term.value)" value="" #term placeholder="用户名/身份证" class="form-control srarchInput ">
+    <input type="search" name="search" (keyup)="search($event,term.value)" value="" #term placeholder="用户名/手机号" class="form-control srarchInput ">
     <button class="btn btn-default" (click)="search($event,term.value)"><i class=" icon iconfont icon-sou"></i></button>
     <button class="btn btn-default" (click)="showAll()">显示全部</button>
     <button class="btn btn-default" (click)="uploadPopover.open()">导入excel</button>
@@ -58,7 +58,7 @@
 
 <popover title="上传excel" #uploadPopover>
   <form action="">
-    <input name="excel" type="file" ng2FileSelect [uploader]="uploader" accept=".xlsx" />
+    <input #uploadPopoverInput name="excel" type="file" ng2FileSelect [uploader]="uploader" accept=".xlsx" />
     <div *ngIf="uploader.queue">
       <button type="button" class="btn btn-default " (click)="uploadFile()" >
         上传
