@@ -1,0 +1,22 @@
+<div class="main" *ngIf="login">
+
+  <nav >
+    <h3 >后台管理系统</h3> 
+    <div class="link">
+      <a routerLink="main" routerLinkActive="active"><span><i class=" icon iconfont icon-wenben"></i></span>  代理清单</a>
+      <a routerLink="administrator" routerLinkActive="active"><span><i class=" icon iconfont icon-guanliyuan"></i></span>管理员管理</a>
+      <a routerLink="log" routerLinkActive="active"><span><i class=" icon iconfont icon-rizhi"></i></span>日志管理</a>
+    </div>
+  </nav>
+  <header>
+    <span (click)="logout()">退出</span>
+    <span>{{administrator}}</span>
+  </header>
+</div>
+<router-outlet>
+</router-outlet>
+
+
+<popover #info [isShowHeader]="FALSE">
+  <div class="infomessage">{{infomessage}}</div>
+</popover>
