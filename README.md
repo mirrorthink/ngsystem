@@ -1,6 +1,9 @@
-# Demo
-# 线上地址
+# angular+webpack
+
+####线上地址
 http://www.notifysystem.trade
+### 描述 后台系统的前端部分 使用angular+webpack
+#### 后台系统的后端地址   https://github.com/mirrorthink/wechat
 
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.28.3.
 
